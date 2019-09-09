@@ -17,7 +17,7 @@ import java.util.HashMap;
 @Slf4j
 @Configuration
 @EnableKafka
-public class ConsumerConfig {
+public class KafkaConsumerConfig {
 
     @Value("${kafka.host}")
     private String bootstrapAddress;
