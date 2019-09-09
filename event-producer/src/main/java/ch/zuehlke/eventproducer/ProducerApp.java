@@ -17,7 +17,7 @@ public class ProducerApp {
     }
 
     @Bean
-    public CommandLineRunner publishBooks(final ArrivalTimeProducer producer) {
+    public CommandLineRunner publishEvents(final ArrivalTimeProducer producer) {
         return args -> events().forEach(producer::publish);
     }
 

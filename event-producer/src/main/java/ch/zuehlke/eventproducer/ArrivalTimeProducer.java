@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ArrivalTimeProducer {
-    private static final String topic = "arrival-time";
+    private static final String TOPIC = "arrival-time";
 
     private final KafkaTemplate<String, ArrivalTime> kafkaTemplate;
 
@@ -15,6 +15,6 @@ public class ArrivalTimeProducer {
     }
 
     public void publish(final ArrivalTime event) {
-        kafkaTemplate.send(topic, event.createKey(), event);
+        kafkaTemplate.send(TOPIC, event.createKey(), event);
     }
 }

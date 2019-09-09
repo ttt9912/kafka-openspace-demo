@@ -9,10 +9,10 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 public class ArrivalTimeConsumer {
-    private static final String topic = "arrival-time";
+    private static final String TOPIC = "arrival-time";
 
-    @KafkaListener(topics = topic, containerFactory = "kafkaListenerContainerFactory")
-    public void bookListener(ConsumerRecord<String, ArrivalTime> record) {
+    @KafkaListener(topics = TOPIC, containerFactory = "kafkaListenerContainerFactory")
+    public void arrivalTimeListener(ConsumerRecord<String, ArrivalTime> record) {
         log.info(">>> key={}, value={}, partition={}, offset={}", record.key(), record.value(), record.partition(), record.offset());
     }
 
